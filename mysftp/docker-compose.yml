@@ -1,0 +1,14 @@
+version: '3'
+services:
+  sftp:
+    image: atmoz/sftp
+    container_name: sftp-server
+    network_mode: nufio-network
+    volumes:
+        - sftp-vol:/home/denis/upload
+    ports:
+        - "2222:22"
+    command: denis:liverpool:1001
+
+volumes:
+  sftp-vol: {}
